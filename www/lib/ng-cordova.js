@@ -4476,7 +4476,7 @@
 
                 register: function (config) {
                     var q = $q.defer();
-
+alert('$cordovaPush.register method called');
                     if (config !== undefined && config.ecb === undefined) {
                         config.ecb = "angular.element(document.querySelector('[ng-app]')).injector().get('$cordovaPush').onNotification";
                     }

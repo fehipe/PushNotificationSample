@@ -16,7 +16,7 @@ app.controller('AppCtrl', function($scope, $cordovaPush, $cordovaDialogs, $cordo
     // Register
     $scope.register = function () {
         var config = null;
-
+alert("register method called")
         if (ionic.Platform.isAndroid()) {
             config = {
                 "senderID": "60879497118" // REPLACE THIS WITH YOURS FROM GCM CONSOLE - also in the project URL like: https://console.developers.google.com/project/434205989073
@@ -32,7 +32,7 @@ app.controller('AppCtrl', function($scope, $cordovaPush, $cordovaDialogs, $cordo
 
         $cordovaPush.register(config).then(function (result) {
             console.log("Register success " + result);
-
+alert("Register success " + result);
             $cordovaToast.showShortCenter('Registered for push notifications');
             $scope.registerDisabled=true;
             // ** NOTE: Android regid result comes back in the pushNotificationReceived, only iOS returned here
@@ -41,7 +41,8 @@ app.controller('AppCtrl', function($scope, $cordovaPush, $cordovaDialogs, $cordo
                 storeDeviceToken("ios");
             }
         }, function (err) {
-            console.log("Register error " + err)
+            console.log("Register error " + err);
+			alert("Register error " + err);
         });
     }
 
