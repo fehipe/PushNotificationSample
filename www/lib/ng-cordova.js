@@ -4484,9 +4484,13 @@ alert('$cordovaPush.register method called');
                     $window.plugins.pushNotification.register(
                         function (token) {
                             q.resolve(token);
+							alert('token');
+							alert(token);
                         },
                         function (error) {
                             q.reject(error);
+							alert('error');
+							alert(error);
                         },
                         config);
 
