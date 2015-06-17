@@ -4480,7 +4480,8 @@ alert('$cordovaPush.register method called');
                     if (config !== undefined && config.ecb === undefined) {
                         config.ecb = "angular.element(document.querySelector('[ng-app]')).injector().get('$cordovaPush').onNotification";
                     }
-
+					alert('$window.plugins');
+alert($window.plugins);
                     $window.plugins.pushNotification.register(
                         function (token) {
                             q.resolve(token);
